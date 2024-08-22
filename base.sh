@@ -18,10 +18,15 @@ foundryup
 git clone https://github.com/TucanaProtocol/Tucana.git
 cd Tucana
 git checkout hunter/chain-event
-cd potv
 
 ## start makebuild
+make build
 
 ## install hardhat
+cd potv
 npm install
 npm install --save-dev hardhat
+
+## start the cluster
+cd ../
+./init.sh
