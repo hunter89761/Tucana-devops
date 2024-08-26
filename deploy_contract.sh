@@ -1,10 +1,10 @@
 #!/bin/bash
 transfer_value(){
-  file="/root/.tucd/config/genesis.json"
+  file="$HOME/.tucd/config/genesis.json"
   prefix="tuc"
 
   # 使用grep查找目标前缀，并使用sed提取完整字符串
-  grep -o "\"$prefix[^\"]*\"" "$file" | sed 's/"//g' > extracted_tuc_addresses.txt
+  grep -o "\"${prefix}[^\"]*\"" "$file" | sed 's/"//g' > extracted_tuc_addresses.txt
   echo "Extracted addresses with prefix '$prefix' have been saved to extracted_tuc_addresses.txt."
   third_line=$(sed -n '3p' extracted_tuc_addresses.txt)
   # 输出结果
@@ -18,6 +18,9 @@ transfer_value(){
 }
 
 transfer_value
+
+rm -rf artifacts cache .openzeppelin
+#PRIVATE_KEY=f08a80d51fd9f9fa6cdbe450af4d2aa98a5d2632ab4847cfeac77233c911f832 npx hardhat compile
 
 PRIVATE_KEY=f08a80d51fd9f9fa6cdbe450af4d2aa98a5d2632ab4847cfeac77233c911f832 \
 npx hardhat run scripts/deploy.ts  --network localhost
