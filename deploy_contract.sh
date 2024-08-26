@@ -20,7 +20,15 @@ transfer_value(){
 transfer_value
 
 rm -rf artifacts cache .openzeppelin
-#PRIVATE_KEY=f08a80d51fd9f9fa6cdbe450af4d2aa98a5d2632ab4847cfeac77233c911f832 npx hardhat compile
+
 
 PRIVATE_KEY=f08a80d51fd9f9fa6cdbe450af4d2aa98a5d2632ab4847cfeac77233c911f832 \
 npx hardhat run scripts/deploy.ts  --network localhost
+
+
+PRIVATE_KEY=f08a80d51fd9f9fa6cdbe450af4d2aa98a5d2632ab4847cfeac77233c911f832 \
+npx hardhat run scripts/configSet.ts  --network localhost
+
+
+PRIVATE_KEY=f08a80d51fd9f9fa6cdbe450af4d2aa98a5d2632ab4847cfeac77233c911f832 \
+npx hardhat run scripts/supply.ts  --network localhost
