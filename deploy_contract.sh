@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# 1. tucana/potv 目录
+# 启动potv 单节点集群
+
+# 2.
 transfer_value(){
   file="$HOME/.tucd/config/genesis.json"
   prefix="tuc"
@@ -32,3 +37,12 @@ npx hardhat run scripts/configSet.ts  --network localhost
 
 PRIVATE_KEY=f08a80d51fd9f9fa6cdbe450af4d2aa98a5d2632ab4847cfeac77233c911f832 \
 npx hardhat run scripts/supply.ts  --network localhost
+
+## supply
+## witdhraw
+## borrow
+## repay
+
+# 3.
+### 切换到tucana-offchain，开始监听用户的supply 事件 和 withdraw事件
+### 扫描区块，扫描的时候方式，go binding
