@@ -149,6 +149,8 @@ cp $HOME/.tucd/config/genesis.json $HOME/.tucd2/config/genesis.json
 cp $HOME/.tucd/config/genesis.json $HOME/.tucd3/config/genesis.json
 cp $HOME/.tucd/config/genesis.json $HOME/.tucd4/config/genesis.json
 
+cp -r $HOME/.tucd ./tucd
+
 # edit each config.toml and app.toml to change ports, moniker and add peers, if run 4 node under the same ip, set `allow_duplicate_ip = true` in config.toml, then start 4 nodes
 # tucd start --chain-id canto_7900-1
 # tucd start --chain-id canto_7900-1 --home ~/.tucd2
