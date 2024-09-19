@@ -27,46 +27,46 @@ rm -rf .tucd .tucd2 .tucd3 .tucd4
 # if $KEY exists it should be deleted
 tucd keys add $KEY1 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $KEY2 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $KEY3 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $KEY4 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $WALLET1 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $WALLET2 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $WALLET3 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $WALLET4 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $WALLET5 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $WALLET6 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $WALLET7 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $WALLET8 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $WALLET9 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 tucd keys add $WALLET10 --keyring-backend $KEYRING --algo $KEYALGO
 echo "generate key"
-sleep 10
+sleep 1
 
 # Set moniker and chain-id for Canto (Moniker can be anything, chain-id must be an integer)
 tucd init $MONIKER1 --chain-id $CHAINID
