@@ -94,7 +94,7 @@ sed -i 's/laddr = "tcp:\/\/127.0.0.1:26657"/laddr = "tcp:\/\/0.0.0.0:26657"/' $H
 sed -i 's/prometheus = false/prometheus = true/' $HOME/.tucd/config/config.toml
 sed -i 's/minimum-gas-prices = "0utuc"/minimum-gas-prices = "0.0001utuc"/' $HOME/.tucd/config/app.toml
 sed -i 's/api = "eth,net,web3"/api = "eth,txpool,personal,net,debug,web3"/' $HOME/.tucd/config/app.toml
-sed -i "s/chain-id = \"ethermint_9000-1\"/chain-id = \"$CHAINID\"/" $HOME/.tucd/config/client.toml
+sed -i 's/chain-id = \"ethermint_9000-1\"/chain-id = \"$CHAINID\"/' $HOME/.tucd/config/client.toml
 
 # Allocate genesis accounts (cosmos formatted addresses)
 tucd add-genesis-account $KEY1 5000000000000000000000000utuc --keyring-backend $KEYRING
@@ -150,7 +150,6 @@ cp $HOME/.tucd/config/genesis.json $HOME/.tucd2/config/genesis.json
 cp $HOME/.tucd/config/genesis.json $HOME/.tucd3/config/genesis.json
 cp $HOME/.tucd/config/genesis.json $HOME/.tucd4/config/genesis.json
 
-cp -r $HOME/.tucd ./.tucd
 
 # edit each config.toml and app.toml to change ports, moniker and add peers, if run 4 node under the same ip, set `allow_duplicate_ip = true` in config.toml, then start 4 nodes
 # tucd start --chain-id canto_7900-1

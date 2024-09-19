@@ -1,3 +1,12 @@
+### generate cluster
+
+this is only use for linux generate
+
+
+
+
+
+
 deploy USER=init14cfsu664xrm3wd82jen4h4jsjnd2y6qcmzdl05
 
 ../../../initia/minitiad move deploy --path ./ --from $USER --node https://rpc.birdee-1.tucana.zone:443 --chain-id birdee-1 --gas-prices 0.15utuc --gas-adjustment 1.5 --gas auto --upgrade-policy COMPATIBLE
