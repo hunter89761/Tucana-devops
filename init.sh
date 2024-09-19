@@ -22,6 +22,7 @@ KEYALGO="eth_secp256k1"
 LOGLEVEL="info"
 HOME=$PWD
 
+rm -rf .tucd .tucd2 .tucd3 .tucd4
 
 # if $KEY exists it should be deleted
 tucd keys add $KEY1 --keyring-backend $KEYRING --algo $KEYALGO
