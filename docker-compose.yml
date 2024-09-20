@@ -12,7 +12,7 @@ services:
       - "9090:9090"    # gRPC 端口
     volumes:
       - ./.tucd:/root/.tucd  # 数据存储
-    command: tucd start
+    command: tucd start --chain-id tucana_712-1
     environment:
       - MONIKER=node0  # 节点的标识名称
     networks:
@@ -31,7 +31,7 @@ services:
       - "9091:9090"    # gRPC 端口
     volumes:
       - ./.tucd2:/root/.tucd  # 数据存储
-    command: tucd start
+    command: tucd start --chain-id tucana_712-1
     environment:
       - MONIKER=node1  # 节点的标识名称
     networks:
@@ -50,7 +50,7 @@ services:
       - "9092:9090"    # gRPC 端口
     volumes:
       - ./.tucd3:/root/.tucd  # 数据存储
-    command: tucd start
+    command: tucd start --chain-id tucana_712-1
     environment:
       - MONIKER=node2  # 节点的标识名称
     networks:
@@ -69,7 +69,7 @@ services:
       - "9093:9090"    # gRPC 端口
     volumes:
       - ./.tucd4:/root/.tucd  # 数据存储
-    command: tucd start
+    command: tucd start --chain-id tucana_712-1
     environment:
       - MONIKER=node3  # 节点的标识名称
     networks:
