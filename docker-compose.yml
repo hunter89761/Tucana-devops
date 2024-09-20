@@ -11,7 +11,7 @@ services:
       - "1317:1317"    # REST 端口
       - "9090:9090"    # gRPC 端口
     volumes:
-      - ./tucd:/root/.tucd  # 数据存储
+      - ./.tucd:/root/.tucd  # 数据存储
     command: tucd start
     environment:
       - MONIKER=node0  # 节点的标识名称
@@ -30,7 +30,7 @@ services:
       - "1318:1317"    # REST 端口
       - "9091:9090"    # gRPC 端口
     volumes:
-      - ./tucd2:/root/.tucd  # 数据存储
+      - ./.tucd2:/root/.tucd  # 数据存储
     command: tucd start
     environment:
       - MONIKER=node1  # 节点的标识名称
@@ -49,7 +49,7 @@ services:
       - "1319:1317"    # REST 端口
       - "9092:9090"    # gRPC 端口
     volumes:
-      - ./tucd3:/root/.tucd  # 数据存储
+      - ./.tucd3:/root/.tucd  # 数据存储
     command: tucd start
     environment:
       - MONIKER=node2  # 节点的标识名称
@@ -68,7 +68,7 @@ services:
       - "1320:1317"    # REST 端口
       - "9093:9090"    # gRPC 端口
     volumes:
-      - ./tucd4:/root/.tucd  # 数据存储
+      - ./.tucd4:/root/.tucd  # 数据存储
     command: tucd start
     environment:
       - MONIKER=node3  # 节点的标识名称
