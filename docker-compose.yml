@@ -1,0 +1,80 @@
+version: "3.8"
+services:
+  # 第一个节点
+  node0:
+    image: "hunter/tucana:latest"  # 替换为你的 Cosmos 节点镜像
+    container_name: node0
+    ports:
+      - "26656:26656"  # P2P 端口
+      - "26657:26657"  # RPC 端口
+      - "1317:1317"    # REST 端口
+      - "9090:9090"    # gRPC 端口
+    volumes:
+      - ./tucd:/root/.tucd  # 数据存储
+    command: tucd start
+    environment:
+      - MONIKER=node0  # 节点的标识名称
+    networks:
+      canto-net:
+        ipv4_address: 172.16.238.10  # 固定 IP 地址
+
+  # 第二个节点
+  node1:
+    image: "hunter/tucana:latest"  # 替换为你的 Cosmos 节点镜像
+    container_name: node1
+    ports:
+      - "26658:26656"  # P2P 端口
+      - "26659:26657"  # RPC 端口
+      - "1318:1317"    # REST 端口
+      - "9091:9090"    # gRPC 端口
+    volumes:
+      - ./tucd2:/root/.tucd  # 数据存储
+    command: tucd start
+    environment:
+      - MONIKER=node1  # 节点的标识名称
+    networks:
+      canto-net:
+        ipv4_address: 172.16.238.11  # 固定 IP 地址
+
+  # 第三个节点
+  node2:
+    image: "hunter/tucana:latest"  # 替换为你的 Cosmos 节点镜像
+    container_name: node2
+    ports:
+      - "26660:26656"  # P2P 端口
+      - "26661:26657"  # RPC 端口
+      - "1319:1317"    # REST 端口
+      - "9092:9090"    # gRPC 端口
+    volumes:
+      - ./tucd3:/root/.tucd  # 数据存储
+    command: tucd start
+    environment:
+      - MONIKER=node2  # 节点的标识名称
+    networks:
+      canto-net:
+        ipv4_address: 172.16.238.12  # 固定 IP 地址
+
+  # 第四个节点
+  node3:
+    image: "hunter/tucana:latest"  # 替换为你的 Cosmos 节点镜像
+    container_name: node3
+    ports:
+      - "26662:26656"  # P2P 端口
+      - "26663:26657"  # RPC 端口
+      - "1320:1317"    # REST 端口
+      - "9093:9090"    # gRPC 端口
+    volumes:
+      - ./tucd4:/root/.tucd  # 数据存储
+    command: tucd start
+    environment:
+      - MONIKER=node3  # 节点的标识名称
+    networks:
+      canto-net:
+        ipv4_address: 172.16.238.13  # 固定 IP 地址
+
+networks:
+  canto-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.238.0/24
