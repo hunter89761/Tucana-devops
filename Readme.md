@@ -24,7 +24,7 @@ in the same directory, run
 ```shell
 
 transfer_value(){
-  file="$HOME/.tucd/config/genesis.json"
+  file="./.tucd/config/genesis.json"
   prefix="tuc"
 
   # 使用grep查找目标前缀，并使用sed提取完整字符串
@@ -33,8 +33,8 @@ transfer_value(){
   third_line=$(sed -n '3p' extracted_tuc_addresses.txt)
   # 输出结果
   echo "The third line is: $third_line"
-  tucd tx bank send $third_line \
-  tuc1pnhvqhfplttfu89rlshaphy5s4mt2jwzwefu0d 10000tuc --fees=40utuc --chain-id=tuc_9000-1 -y
+  tucd tx bank send $third_line --keyring-backend test \
+  tuc1pnhvqhfplttfu89rlshaphy5s4mt2jwzwefu0d 10000tuc --fees=40utuc --chain-id=tucana_712-1 -y --home ./.tucd
   ##
   echo "wait transaction finished"
   sleep 10

@@ -6,6 +6,7 @@ services:
     container_name: node0
     ports:
       - "26656:26656"  # P2P 端口
+      - "8545:8545"  # eth rpc 端口
       - "26657:26657"  # RPC 端口
       - "1317:1317"    # REST 端口
       - "9090:9090"    # gRPC 端口
@@ -24,6 +25,7 @@ services:
     container_name: node1
     ports:
       - "26658:26656"  # P2P 端口
+      - "8565:8545"  # eth rpc 端口
       - "26659:26657"  # RPC 端口
       - "1318:1317"    # REST 端口
       - "9091:9090"    # gRPC 端口
@@ -42,6 +44,7 @@ services:
     container_name: node2
     ports:
       - "26660:26656"  # P2P 端口
+      - "8575:8545"  # eth rpc 端口
       - "26661:26657"  # RPC 端口
       - "1319:1317"    # REST 端口
       - "9092:9090"    # gRPC 端口
@@ -60,6 +63,7 @@ services:
     container_name: node3
     ports:
       - "26662:26656"  # P2P 端口
+      - "8585:8545"  # eth rpc 端口
       - "26663:26657"  # RPC 端口
       - "1320:1317"    # REST 端口
       - "9093:9090"    # gRPC 端口
